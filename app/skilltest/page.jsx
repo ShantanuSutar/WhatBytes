@@ -19,16 +19,16 @@ const SkillTest = () => {
     <div className=" py-4 md:py-6 lg:py-8 px-5 md:px-10  lg:px-12  w-full relative">
       {/* Left */}
       <div className=" text-slate-600 font-semibold">Skill Test</div>
-      <div className="flex justify-between mt-6 relative">
-        <div>
+      <div className=" w-full flex justify-between mt-6 relative">
+        <div className=" w-[53%]">
           <Topic setShowModal={setShowModal} />
           <Statistics scores={scores} />
           <Graph scores={scores} />
         </div>
         {/* Right */}
-        <div>
+        <div className="w-[44%]">
           <SyllabusWiseAnalysis />
-          <QuesAnalysis />
+          <QuesAnalysis scores={scores} />
         </div>
       </div>
       {showModal && (
