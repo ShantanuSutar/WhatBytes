@@ -23,7 +23,7 @@ const SkillTest = () => {
         <div>
           <Topic setShowModal={setShowModal} />
           <Statistics scores={scores} />
-          <Graph />
+          <Graph scores={scores} />
         </div>
         {/* Right */}
         <div>
