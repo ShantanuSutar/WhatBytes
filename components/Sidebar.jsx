@@ -27,7 +27,7 @@ const Sidebar = () => {
   const pathName = usePathname();
   // console.log(pathName.split("/")[1] === sidebarNavItems[1].href.split("/")[1]);
   return (
-    <div className=" w-full md:w-[25%] lg:w-[20%]     md:border-r md:min-h-screen  md:pt-12 pt-6 flex flex-row md:flex-col gap-3 md:justify-normal justify-center">
+    <div className=" w-full lg:w-[25%] xl:w-[20%]     lg:border-r lg:min-h-screen  lg:pt-12 pt-6 flex flex-row lg:flex-col gap-3 lg:justify-normal justify-center">
       {sidebarNavItems.map((item, index) => {
         return (
           <SidebarNavLink

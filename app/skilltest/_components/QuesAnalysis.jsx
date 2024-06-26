@@ -3,7 +3,7 @@ import { GoGoal } from "react-icons/go";
 const QuesAnalysis = ({ scores }) => {
   const percentage = Math.round((scores.currentScore / 15) * 100);
   return (
-    <div className=" w-full items-center justify-center border py-9 mt-5 px-7 rounded-lg">
+    <div className=" w-full items-center justify-center border py-9 xl:mt-5 mt-8 px-7 rounded-lg">
       <div className="a flex items-center justify-between">
         <h1 className=" font-bold">Question Analysis</h1>
         <p className="a text-blue-700 font-bold">{scores.currentScore}/15</p>

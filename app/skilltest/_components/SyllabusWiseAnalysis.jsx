@@ -33,7 +33,7 @@ const SyllabusWiseAnalysis = () => {
   ];
 
   return (
-    <div className=" border w-full p-7 rounded-lg pb-10">
+    <div className=" border w-full xl:mt-0 mt-8 p-7 rounded-lg pb-10">
       <h1 className="a font-bold">Syllabus Wise Analysis</h1>
       {syllabus.map((topic, index) => {
         return <SyllabusWisePercent key={index} topic={topic} />;

@@ -39,25 +39,27 @@ const Graph = ({ scores }) => {
     <div className="a mt-8 border rounded-lg w-full">
       <div className=" p-5">
         <h1 className="a font-bold">Comparison Graph</h1>
-        <div className="  flex items-baseline justify-between ">
+        <div className="  flex items-baseline gap-4 sm:gap-10 justify-between ">
           <p className="a text-slate-700 text-[15px]">
             <strong>You scored {scores.percentile}% percentile</strong> which is
-            lower than the <br /> average percentile {averagePercentile}% of all
-            the engineers who took the assignment
+            lower than the <br className=" xl:flex hidden" /> average percentile{" "}
+            {averagePercentile}% of all the engineers who took the assignment
           </p>
           <div className="a bg-slate-100 flex items-center justify-center rounded-full p-3 border">
             <PiChartLineDuotone className="a text-red-500" size={25} />
           </div>
         </div>
       </div>
-      <LineChart
-        width={600}
-        height={350}
-        data={data}
-        margin={{ top: 20, right: 30, left: 20, bottom: 25 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        {/* <XAxis
+      <div className=" max-[420px]:-my-16   sm:-my-0  sm:scale-100 xl:scale-90  mx-auto  sm:-ml-0 xl:-ml-12 2xl:-ml-0 2xl:scale-100 w-full flex items-center justify-center">
+        <LineChart
+          className=" "
+          width={600}
+          height={350}
+          data={data}
+          margin={{ top: 20, right: 30, left: 20, bottom: 25 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          {/* <XAxis
           dataKey="x"
           label={{
             value: "Percentile",
@@ -66,45 +68,46 @@ const Graph = ({ scores }) => {
             dy: 25,
           }}
         /> */}
-        <XAxis
-          dataKey="x"
-          type="number"
-          domain={[0, 100]}
-          ticks={[0, 25, 50, 75, 100]}
-          label={{
-            value: "Percentile",
-            position: "center",
-            offset: -10,
-            dy: 25,
-          }}
-        />
-        <YAxis
-          label={{
-            value: "Number of Students",
-            angle: -90,
-            position: "center",
-            dx: -10,
-          }}
-        />
-        <Tooltip
-          formatter={(value, name, props) => [
-            `numberOfStudents: ${props.payload.y}`,
-          ]}
-        />
-        {/* <Legend verticalAlign="top" height={36} /> */}
-        <ReferenceLine
-          x={scores.percentile}
-          stroke="grey"
-          label="Your Percentile"
-        />
+          <XAxis
+            dataKey="x"
+            type="number"
+            domain={[0, 100]}
+            ticks={[0, 25, 50, 75, 100]}
+            label={{
+              value: "Percentile",
+              position: "center",
+              offset: -10,
+              dy: 25,
+            }}
+          />
+          <YAxis
+            label={{
+              value: "Number of Students",
+              angle: -90,
+              position: "center",
+              dx: -10,
+            }}
+          />
+          <Tooltip
+            formatter={(value, name, props) => [
+              `numberOfStudents: ${props.payload.y}`,
+            ]}
+          />
+          {/* <Legend verticalAlign="top" height={36} /> */}
+          <ReferenceLine
+            x={scores.percentile}
+            stroke="grey"
+            label="Your Percentile"
+          />
 
-        <Line
-          type="monotone"
-          dataKey="y"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+          <Line
+            type="monotone"
+            dataKey="y"
+            stroke="#8884d8"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
+      </div>
     </div>
   );
 };
