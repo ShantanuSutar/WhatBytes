@@ -55,13 +55,16 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
   };
 
   return (
-    <form onSubmit={handleSave} className=" z-10  pt-6 flex flex-col gap-8 ">
-      <div className="a flex px-8 items-center justify-between">
-        <h1 className="a text-2xl font-bold">Update Score</h1>
+    <form
+      onSubmit={handleSave}
+      className=" z-10  pt-6 flex flex-col flex-wrap gap-6 sm:gap-8 text-sm sm:text-base"
+    >
+      <div className="a flex px-4  sm:px-8 items-center justify-between">
+        <h1 className="a text-base sm:text-2xl font-bold">Update Score</h1>
         <TiHtml5 className=" text-orange-600" size={40} />
       </div>
-      <div className=" flex items-center px-4 justify-between">
-        <div className="a flex gap-2 items-center">
+      <div className=" flex flex-wrap items-center gap-2 sm:gap-3 md:gap-5 lg:gap-0  px-4 justify-between">
+        <div className="a flex flex-wrap gap-2 items-center">
           <span className=" bg-blue-900 text-white size-6 flex items-center justify-center rounded-full">
             1
           </span>{" "}
@@ -81,8 +84,8 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
           )}
         </div>
       </div>
-      <div className=" flex items-center px-4 justify-between">
-        <div className="a flex gap-2">
+      <div className=" flex flex-wrap items-center gap-2 sm:gap-3 md:gap-5 lg:gap-0 px-4 justify-between">
+        <div className="a flex flex-wrap gap-2">
           <span className=" bg-blue-900 text-white size-6 flex items-center justify-center rounded-full">
             2
           </span>{" "}
@@ -102,8 +105,8 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
           )}
         </div>
       </div>
-      <div className=" flex items-center px-4 justify-between gap-10">
-        <div className="a flex gap-2">
+      <div className=" flex flex-wrap items-center px-4 justify-between gap-2 sm:gap-3 xl:gap-10">
+        <div className="a flex flex-wrap gap-2">
           <span className=" bg-blue-900 text-white size-6 flex items-center justify-center rounded-full">
             3
           </span>{" "}
@@ -123,15 +126,15 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
           )}
         </div>
       </div>
-      <div className=" text-sm font-bold flex justify-end gap-6 px-4 pb-5">
+      <div className=" text-sm font-bold flex  flex-wrap justify-center sm:justify-end gap-5 sm:gap-6 px-4 pb-5">
         <button
-          className="a  text-blue-800 border-blue-800 border-2 px-3 rounded-md py-3"
+          className="a  text-blue-800 border-blue-800 border-2 px-2 sm:px-3 rounded-md py-2 sm:py-3 hover:text-blue-500 hover:border-blue-500"
           onClick={handleCancel}
         >
           Cancel
         </button>
         <button
-          className="a  bg-blue-900 outline outline-1 outline-black px-8 text-white rounded-md py-3 flex items-center gap-2"
+          className="a  bg-blue-900 hover:bg-blue-800 outline outline-1 outline-black px-4 sm:px-8 text-white rounded-md py-2 sm:py-3 flex items-center gap-2"
           type="submit"
         >
           Save <FiArrowRight />

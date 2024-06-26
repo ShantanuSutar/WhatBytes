@@ -11,7 +11,7 @@ const QuesAnalysis = ({ scores }) => {
       <div className=" text-[15px] text-slate-600 mt-5">
         <strong>
           You scored {scores.currentScore} question correct out of 15.
-        </strong>
+        </strong>{" "}
         However it still needs some improvements.
       </div>
       <div className=" flex items-center justify-center mt-10">

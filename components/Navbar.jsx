@@ -14,7 +14,7 @@ const Navbar = () => {
         alt="Logo"
       />
       {/* Profile */}
-      <div className="a flex items-center gap-2 p-1 px-2 rounded-md border-2 border-slate-200 scale-90 sm:scale-100">
+      <div className="a flex items-center gap-2 p-1 px-2 rounded-md border-2 border-slate-200 scale-90 sm:scale-100 hover:-translate-y-1 transition-all duration-200 cursor-pointer hover:border-slate-600 hover:bg-slate-100">
         <Image
           width={20}
           height={20}
