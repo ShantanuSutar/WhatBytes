@@ -1,9 +1,11 @@
 import Link from "next/link";
 
-const SidebarNavLink = ({ icon, heading, href }) => {
+const SidebarNavLink = ({ icon, heading, href, active }) => {
   return (
     <Link
-      className="group  p-4 px-6 mr-4 rounded-full md:rounded-r-full flex items-center gap-4 text-slate-700 hover:text-blue-500 hover:bg-slate-100"
+      className={`  p-4 px-6 mr-4 rounded-full md:rounded-r-full flex items-center gap-4  hover:text-blue-700 hover:bg-slate-100 ${
+        active ? " text-blue-500 bg-slate-100" : "text-slate-700"
+      }`}
       href={href}
     >
       {/* icon */}
