@@ -1,7 +1,11 @@
+// "use client";
+
 import { TiHtml5 } from "react-icons/ti";
 
 const Topic = ({ setShowModal }) => {
-  const theme = localStorage.getItem("theme");
+  // const theme = localStorage.getItem("theme");
+  const theme = "";
+
   return (
     <div className=" flex  items-center gap-5 lg:gap-12 xl:gap-3 border px-2  lg:px-10 xl:px-2  py-6 rounded-lg flex-wrap sm:flex-nowrap justify-center sm:justify-normal text-center  sm:text-left ">
       <TiHtml5 className=" text-orange-600" size={60} />

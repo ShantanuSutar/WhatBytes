@@ -1,3 +1,5 @@
+// "use client";
+
 import { TiHtml5 } from "react-icons/ti";
 import { FiArrowRight } from "react-icons/fi";
 import { useState } from "react";
@@ -8,7 +10,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
     percentile: false,
     currentScore: false,
   });
-  const theme = localStorage.getItem("theme");
+  // const theme = localStorage.getItem("theme");
 
   const handleSave = (e) => {
     e.preventDefault();

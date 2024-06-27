@@ -24,7 +24,7 @@ const QuesAnalysis = ({ scores }) => {
           }}
           role="progressbar"
         >
-          <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border rounded-full size-[70%] z-20"></div>
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border rounded-full size-[70%] z-20"></div>
           <GoGoal size={30} className=" z-40  text-red-700" />
         </div>
       </div>

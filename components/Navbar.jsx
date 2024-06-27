@@ -3,23 +3,28 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-  );
+  const [theme, setTheme] = useState("");
+  // const theme = "";
 
   const handleToggle = (e) => {
     if (e.target.checked) {
       setTheme("night");
+      localStorage.setItem("theme", "night");
+      document.querySelector("html").setAttribute("data-theme", "night");
     } else {
       setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.querySelector("html").setAttribute("data-theme", "light");
     }
   };
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+    const localtheme = localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : "light";
+
+    setTheme(localtheme);
+  }, []);
   return (
     <div className="a border py-4  sm:py-6  flex  items-center justify-between px-4 sm:px-8 md:px-12 ">
       {/* Logo */}
@@ -39,7 +44,7 @@ const Navbar = () => {
             {/* this hidden checkbox controls the state */}
             <input
               type="checkbox"
-              checked={theme === "light" ? false : true}
+              checked={theme === "night" ? true : false}
               onChange={handleToggle}
             />
 
