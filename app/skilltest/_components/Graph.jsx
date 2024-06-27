@@ -12,6 +12,8 @@ import {
 import { PiChartLineDuotone } from "react-icons/pi";
 
 const Graph = ({ scores }) => {
+  const theme = localStorage.getItem("theme");
+
   const data = [
     { x: 0, y: 0 },
     { x: 10, y: 3 },
@@ -40,7 +42,11 @@ const Graph = ({ scores }) => {
       <div className=" p-5">
         <h1 className="a font-bold">Comparison Graph</h1>
         <div className="  flex items-baseline gap-4 sm:gap-10 justify-between ">
-          <p className="a text-slate-700 text-[15px]">
+          <p
+            className={`a ${
+              theme === "light" ? "text-slate-700" : " text-slate-500"
+            } text-[15px]`}
+          >
             <strong>You scored {scores.percentile}% percentile</strong> which is
             lower than the <br className=" xl:flex hidden" /> average percentile{" "}
             {averagePercentile}% of all the engineers who took the assignment

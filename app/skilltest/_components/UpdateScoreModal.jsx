@@ -8,6 +8,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
     percentile: false,
     currentScore: false,
   });
+  const theme = localStorage.getItem("theme");
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -57,7 +58,9 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
   return (
     <form
       onSubmit={handleSave}
-      className=" z-10  pt-6 flex flex-col flex-wrap gap-6 sm:gap-8 text-sm sm:text-base"
+      className={` ${
+        theme === "light" ? "" : " text-black"
+      } z-10  pt-6 flex flex-col flex-wrap gap-6 sm:gap-8 text-sm sm:text-base`}
     >
       <div className="a flex px-4  sm:px-8 items-center justify-between">
         <h1 className="a text-base sm:text-2xl font-bold">Update Score</h1>
@@ -73,7 +76,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
         <div>
           <input
             defaultValue={scores.rank}
-            className="a border w-40 rounded-md text-black border-blue-400 h-9 px-2 font-bold"
+            className="a border w-40 rounded-md text-black border-blue-400 h-9 px-2 font-bold bg-white"
             type="number"
             name="rank"
           />
@@ -94,7 +97,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
         <div>
           <input
             defaultValue={scores.percentile}
-            className="a border w-40 rounded-md text-black border-blue-400 h-9 px-2 font-bold"
+            className="a border w-40 rounded-md text-black border-blue-400 bg-white h-9 px-2 font-bold"
             type="number"
             name="percentile"
           />
@@ -115,7 +118,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
         <div>
           <input
             defaultValue={scores.currentScore}
-            className="a border w-40 rounded-md text-black border-blue-400 h-9 px-2 font-bold"
+            className="a border w-40 rounded-md text-black border-blue-400 bg-white h-9 px-2 font-bold"
             type="number"
             name="currentScore"
           />
