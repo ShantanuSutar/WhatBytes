@@ -11,6 +11,7 @@ const UpdateScoreModal = ({ scores, setShowModal, setScores }) => {
     currentScore: false,
   });
   // const theme = localStorage.getItem("theme");
+  const theme = "";
 
   const handleSave = (e) => {
     e.preventDefault();
